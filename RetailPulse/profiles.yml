@@ -1,0 +1,10 @@
+RetailPulse:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: ACCOUNTADMIN
+      warehouse: RETAIL_PULSE_WH
+      database: RETAIL_PULSE_DB
+      schema: BRONZE
+      threads: 8

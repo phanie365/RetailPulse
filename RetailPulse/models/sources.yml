@@ -1,0 +1,21 @@
+sources:
+  - name: bronze
+    database: RETAIL_PULSE_DB
+    schema: BRONZE
+    tables:
+      - name: BRZ_TRANSACTIONS
+        description: "Transactions JSON brutes chargées depuis le stage interne."
+        columns:
+          - name: RAW_DATA
+            description: "Événement de vente brut au format VARIANT."
+
+
+  - name : cdc
+    database : RETAIL_PULSE_DB
+    schema : SILVER
+    tables : 
+      - name : TRANSACTION_DELTA
+        description : "Nouvelles transactions copiées depuis le stream bronze"
+        columns:
+          - name : RAW_DATA
+            description : "Evenement JSON brut conservé pour le traitement incrémental"
