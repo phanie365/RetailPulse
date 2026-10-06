@@ -23,9 +23,9 @@ Les rôles opérationnels sont définis pour les schémas `BRONZE`, `SILVER` et 
 
 | Niveau | Privilèges accordés dans le périmètre du schéma | Effet |
 | --- | --- | --- |
-| `SR` — lecture | `USAGE` sur la base et le schéma ; `SELECT` sur les tables et vues existantes (`ALL`) et sur celles créées ensuite (`FUTURE`). | Consulter les données du schéma. `USAGE` seul ne permet pas de lire les lignes. |
-| `SW` — écriture | `USAGE` sur la base et le schéma ; `INSERT`, `UPDATE` et `DELETE` sur les tables existantes et futures, selon les besoins. | Modifier les lignes des tables autorisées. Ces droits n'impliquent pas automatiquement `SELECT` ; celui-ci doit être accordé si l'écriture nécessite aussi la lecture. |
-| `SFULL` — accès étendu au schéma | Droits de lecture et d'écriture, plus les privilèges de création nécessaires sur le schéma, par exemple `CREATE TABLE` et `CREATE VIEW`. | Créer et utiliser les objets prévus dans ce schéma. Le libellé « full » ne donne pas à lui seul `OWNERSHIP`, ni le droit de créer des bases ou des warehouses. |
+| `SR` : lecture | `USAGE` sur la base et le schéma ; `SELECT` sur les tables et vues existantes (`ALL`) et sur celles créées ensuite (`FUTURE`). | Consulter les données du schéma. `USAGE` seul ne permet pas de lire les lignes. |
+| `SW` : écriture | `USAGE` sur la base et le schéma ; `INSERT`, `UPDATE` et `DELETE` sur les tables existantes et futures, selon les besoins. | Modifier les lignes des tables autorisées. Ces droits n'impliquent pas automatiquement `SELECT` ; celui-ci doit être accordé si l'écriture nécessite aussi la lecture. |
+| `SFULL` : accès étendu au schéma | Droits de lecture et d'écriture, plus les privilèges de création nécessaires sur le schéma, par exemple `CREATE TABLE` et `CREATE VIEW`. | Créer et utiliser les objets prévus dans ce schéma. Le libellé « full » ne donne pas à lui seul `OWNERSHIP`, ni le droit de créer des bases ou des warehouses. |
 
 `ALL TABLES` et `ALL VIEWS` couvrent les objets déjà présents ; `FUTURE TABLES` et `FUTURE VIEWS` couvrent ceux créés ultérieurement. Le contrôle des accès suit donc la chaîne **base → schéma → objet**. Pour les vues, c'est `SELECT` qui sert à la consultation ; les privilèges d'écriture concernent les tables. Si un schéma est en mode *managed access*, l'attribution de droits sur ses objets est réservée au propriétaire du schéma ou à un rôle autorisé à gérer les grants.
 
