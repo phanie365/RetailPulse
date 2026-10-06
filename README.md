@@ -1,4 +1,4 @@
-# RetailPulse — Modern Data Warehouse sur Snowflake
+# RetailPulse : Modern Data Warehouse sur Snowflake
 
 Projet d'apprentissage construit autour de transactions de vente au format JSON. Il met en pratique l'ingestion de données semi-structurées, une architecture Bronze / Silver / Gold, les transformations dbt, le CDC avec les streams et l'orchestration avec les tasks Snowflake.
 
